@@ -1,0 +1,15 @@
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: 7vw 7vw 7vw;
+  padding: 10px;
+}
+
+.grid-item {
+  padding: 10px 20px 10px 20px;
+  font-size: 16px;
+  text-align: center;
+}
+.menu:hover{
+    cursor: pointer;
+    color: lightgray;
+}

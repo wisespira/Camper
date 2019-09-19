@@ -1,5 +1,6 @@
 {
   "projects": {
-    "beta": "campingweb-b4604"
+    "beta": "campingweb-b4604",
+    "default": "campingweb-b4604"
   }
 }

@@ -1,20 +1,27 @@
 <div class="container" style="text-align:center;">
-  <div class="topbar">
+
   <div class="grid-container">
   <div class="grid-item top">Name</div>
   <div class="grid-item top">Threads</div>
   <div class="grid-item top">Post</div>
   <div class="grid-item top">Last Active</div>
   
-    <div class="grid-item">Welcome</div>
-  <div class="grid-item">216</div>
-  <div class="grid-item">11k</div>
-  <div class="grid-item">10:30</div>
-  
+  <div *ngFor="let post of posts; index" style="display: contents;">
+  <div class="grid-item">{{post.name}}</div>
+  <div class="grid-item">{{post.threads}}</div>
+  <div class="grid-item">{{post.post}}</div>
+  <div class="grid-item">{{post.active}}</div>
+      
+  </div>
+
   
   </div>
-  </div>
+
    <br>
-   Name: <input type="text" name="lname" style="margin-right: 10px">
+   
+   <!-- *ngIf="condition"-->
+   <div  *ngIf="posts">
+   Name: <input type="text" [(ngModel)]="name" style="margin-right: 10px">
   <input type="submit" value="Add topic" (click)="addTopic()">
+   </div>
 </div>

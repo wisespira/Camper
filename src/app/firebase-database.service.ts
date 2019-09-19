@@ -5,17 +5,20 @@ import {FirebaseProvider} from 'angular-firebase';
   providedIn: 'root'
 })
 export class FirebaseDatabaseService {
-
-  constructor(private fb: FirebaseProvider) { }
+  posts:any;
+  constructor(private fb: FirebaseProvider) {
+      this.getPosts().then((res)=>{
+          this.posts = res;
+      })
+    }
   
-  addPost(){
-      console.log('yo2');
-      this.fb.pushData('ira', 'bob').then((res) => {console.log(res)})
+  addPost(name,time){
+      this.fb.pushData('posts', {name:name, threads:0, post:0, active:time}).then((res) => {})
       .catch((err) => {console.log(err)}) 
   }
   
-  getPosts(){
-      
+   getPosts(){
+    return this.fb.getDataArr('posts','value',{});
   }
   
 }
